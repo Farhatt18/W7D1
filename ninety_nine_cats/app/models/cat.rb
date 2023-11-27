@@ -2,8 +2,8 @@ class Cat < ApplicationRecord
     CAT_COLORS = ["orange", "black","white", "grey", "brown"].freeze 
 
     validates :name, :birth_date, :description, presence: true
-    validates :color, presence: true, inclusion: {in: CAT_COLORS}
-    validates :sex, presence: true, inclusion: {in: ["M", "F"]}
+    validates :color, presence: true, inclusion: { in: CAT_COLORS }
+    validates :sex, presence: true, inclusion: { in: ["M", "F"] } 
     validate :birth_date_cannot_be_future
 
 

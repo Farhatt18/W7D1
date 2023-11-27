@@ -1,9 +1,25 @@
-<h1> @cat show </h1>
+<h1> cat show </h1>
 
-    <li>
-        <%= @cat.name %>
-        <%= @cat.color %>
-        <%= @cat.sex %>
-        <%= @cat.birth_date %>
-        <%= @cat.description %>
-    </li>
+    <table>
+        <thead>
+            <tr> 
+                <th>cat info!</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th> name </th>
+                <th> color </th>
+                <th> sex </th>
+                <th> birth date </th>
+                <th> description </th>
+            </tr>
+            <tr>
+                <td><%= @cat[:name] %></td>
+                <td><%= @cat[:color] %></td>
+                <td><%= @cat[:sex] %></td>
+                <td><%= @cat[:birth_date] %></td>
+                <td><%= @cat[:description] %></td>
+            </tr>
+        </tbody>
+    </table>

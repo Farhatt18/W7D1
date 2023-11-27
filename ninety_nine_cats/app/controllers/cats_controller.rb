@@ -5,15 +5,19 @@ class CatsController < ApplicationController
   end
 
   def show 
-    @cat = Cat.find_by(params[:id])
+    @cat = Cat.find(params[:id])
   end
 
   def create 
+    # debugger
     @cat = Cat.new(cat_params)
+
     if @cat.save 
-      redirect_to cats_url
+      redirect_to cat_url(@cat)
     else
-      render json: @cat.errors.full_messages, status: 422
+      debugger
+      # render json: @cat.errors.full_messages, status: 422
+      render :new
     end
   end
 
@@ -37,6 +41,6 @@ class CatsController < ApplicationController
   private 
 
   def cat_params 
-    params.require(:cats).permit(:name, :color, :sex, :birth_date, :description)
+    params.require(:cat).permit(:name, :color, :sex, :birth_date, :description)
   end
 end
