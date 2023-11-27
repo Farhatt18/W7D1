@@ -9,3 +9,5 @@
 #   end
 
 cat1 = Cat.create!(name: "charles", color: "black", birth_date: "01/01/2001", sex: "M", description: "great!")
+
+cat2 = Cat.create!(name: "tom", color: "brown", birth_date: "01/01/1991", sex: "M", description: "getting a lil old!")
