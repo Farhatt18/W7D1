@@ -1,0 +1,35 @@
+<h1> new cat! </h1>
+
+<form action="/cats" method="POST">
+    <label for="name"> name </label>
+    <input id="name" type="text" name="cat[name]">
+
+    <label for="color"> color </label>
+    <select name="cat[color]" id="color">
+        <option disabled selected> -- Please Select -- </option>
+        <option value="orange"> orange </option>
+        <option value="black"> black </option>
+        <option value="white"> white </option>
+        <option value="grey"> grey </option>
+        <option value="brown"> brown </option>
+    </select>
+
+    <div>
+        <label for="sex"> sex </label>
+        <input id="sex" type="radio" name="cat[sex]">
+        <label for="M"> M </label>
+        <input id="sex" type="radio" name="cat[sex]">
+        <label for="F"> F </label>
+    </div>
+
+    <label for="birth_date"> birth date </label>
+    <input id="birth_date" type="date" name="cat[birth_date]">
+
+    <label for="description"> description </label>
+    <textarea name="cat[description]" id="description"></textarea>
+
+    <input type="submit">
+    
+</form>
+
+
