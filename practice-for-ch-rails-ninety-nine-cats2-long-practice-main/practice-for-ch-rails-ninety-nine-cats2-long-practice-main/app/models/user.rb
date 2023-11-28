@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   before_validation :ensure_session_token
   validates :username, :session_token, presence: true, uniqueness: true 
-  validates :password_digest, prescence: { messgae: "Password cannot be blank" }
+  validates :password_digest, presence: { messgae: "Password cannot be blank" }
   validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password 
@@ -33,7 +33,7 @@ class User < ApplicationRecord
     return session_token unless User.exists?(session_token: session_token)
   end
 
-  def eunsure_session_token 
+  def ensure_session_token 
     self.session_token ||= generate_unique_session_token
   end
 
